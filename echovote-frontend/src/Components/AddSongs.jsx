@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function AllSongs({ songs }) {
+function AddSongs({ songs }) {
   return (
     <div className="flex flex-col items-center gap-4">
       {songs.map((song, index) => (
@@ -13,8 +13,8 @@ function AllSongs({ songs }) {
 function SongVote({ song }) {
   const [count, setCount] = useState(0);
 
-  const handleUpvote = () => setCount(count + 1);
-  const handleDownvote = () => setCount(count - 1);
+  const handleDelete = () => setCount( );
+  const handleAdd = () => setCount();
 
   return (
     <div className="min-w-[300px] w-[800px] h-24 rounded-2xl flex items-center justify-center px-10 gap-6 relative scroll-container" style={{backdropFilter:'blur(1000px)'}}>
@@ -27,28 +27,18 @@ function SongVote({ song }) {
         <a href={song.url} className="underline">{song.url}</a>
       </div>
 
-      {/* Upvote and Downvote Buttons */}
+      {/* Add and Delete Songs Buttons */}
       <div className="flex items-center gap-2">
+      
         <button
-          onClick={handleUpvote}
-          className="bg-gray-500 w-16 h-12 rounded flex items-center justify-center text-lg font-bold"
-        >
-          <ion-icon name="arrow-up-outline"></ion-icon>
-        </button>
-        <button
-          onClick={handleDownvote}
+          onClick={handleDelete}
           className="bg-gray-500 w-16 h-12 rounded flex items-center justify-center text-lg font-bold "
         >
-          <ion-icon name="arrow-down-outline"></ion-icon>
-        </button>
-
-        {/* Vote Count */}
-        <div className="ml-4 text-lg font-semibold">
-          <p>{count}</p>
-        </div>
+          <ion-icon name="trash-outline"></ion-icon>
+        </button> 
       </div>
     </div>
   );
 }
 
-export default AllSongs;
+export default AddSongs;

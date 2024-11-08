@@ -2,7 +2,7 @@ import React from 'react';
 
 function CurrentSong() {
   return (
-      <div className=" w-[800px] min-w-[300px] flex flex-col items-center p-5"> 
+      <div className=" w-[800px] min-w-[300px] flex flex-col items-center justify-center p-5 "> 
 
           {/* Video */} 
             <div>
@@ -11,7 +11,7 @@ function CurrentSong() {
 
           {/* Song Details */}
             <div className="flex-1 mx-6 text-center">
-              <h1 className="text-lg font-semibold mt-2">Song Title</h1>
+              <h1 className="text-lg font-semibold mt-2 ">Song Title</h1>
               <a href="#" className="underline">Song URL</a>
             </div> 
       

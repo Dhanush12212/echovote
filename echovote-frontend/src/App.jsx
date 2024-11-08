@@ -4,7 +4,7 @@ import LoginPage from './Pages/LoginPage'
 import Login from './Components/Login'
 import Register from './Components/Register'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'; 
-import PlaylistPage from './Pages/PlaylistPage'
+import PlaylistPage from './Pages/PlaylistPage' 
 
  
 function App() { 

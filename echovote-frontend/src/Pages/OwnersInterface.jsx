@@ -1,13 +1,12 @@
 import React, { useState } from 'react';  
-import CurrentSong from '../Components/CurrentSong';
-import AllSongs from '../Components/AllSongs';
+import CurrentSong from '../Components/CurrentSong';  
 import { assets } from '../assets/assets';
 import { useParams } from 'react-router-dom';  
-import './pageStyle.css' 
-import OwnersInterface from './OwnersInterface';
+import './pageStyle.css'  
+import AddSongs from '../Components/AddSongs';
 
-function PlaylistPage() {
-    const { venueName } = useParams();
+function OwnersInterface() {
+    const {venueName} = useParams(); 
     const songsData = [
         { name: 'Song 1', url: 'URL', votes: 0 },
         { name: 'Song 2', url: 'URL', votes: 0 },
@@ -17,7 +16,7 @@ function PlaylistPage() {
     ];
 
     const [songs, setSongs] = useState(songsData);
-    const [currentSong, setCurrentSong] = useState(songs[0]); 
+    const [currentSong, setCurrentSong] = useState(songs[0]);
 
     // Function to handle upvoting/downvoting
     const handleVote = (songName, type) => {
@@ -59,18 +58,21 @@ function PlaylistPage() {
                 </div>
 
                 {/* Scrollable Song List */}
-                <div className='flex flex-col items-center p-10 w-full max-w-4xl song-list-container'>
-                    <h1 className='text-2xl font-semibold mb-4'>You can Vote here</h1>
-                    <AllSongs 
-                        songs={songs} 
-                        onVote={handleVote} 
-                        setCurrentSong={setCurrentSong} 
-                    />
+                <div className='text-center p-10 w-full max-w-4xl '>
+                  <div className='flex justify-around'>
+                    <h1 className='text-2xl font-semibold '>Add Songs</h1>
+                    <input
+                        className='w-full max-w-xs px-4 py-2 mb-4 border rounded-lg outline-none text-blue-500 text-lg'
+                        type="search"
+                        placeholder="Search songs..." 
+                        />
+                  </div>
+                  <AddSongs songs={songs}/>
                 </div>
+ 
             </div> 
-
         </div>
     );
 }
 
-export default PlaylistPage;
+export default OwnersInterface;
